@@ -1,0 +1,103 @@
+#+TITLE: 
+#+AUTHOR:VLEAD
+#+DATE:
+#+SETUPFILE: ./org-templates/level-0.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
+#+OPTIONS: ^:nil
+
+
+* Installation
+  Refer to the [[https://www.haskell.org/downloads/][blog]] for installation.  I picked 'Minimal Installers'
+
+  1. cabal and ghc [[https://www.haskell.org/downloads/linux][installation]] went through without a hitch.
+     #+BEGIN_EXAMPLE
+     sudo apt-get update
+     sudo apt-get install -y software-properties-common
+     sudo add-apt-repository -y ppa:hvr/ghc
+     sudo apt-get update
+     sudo apt-get install -y cabal-install-1.22 ghc-7.10.3
+     cat >> ~/.bashrc <<EOF
+     export PATH="\$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:\$PATH"
+     EOF
+     export PATH=~/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH
+     #+END_EXAMPLE
+  2. [[https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#ubuntu][Installation]] of [[https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#ubuntu][Stack]]
+     #+BEGIN_EXAMPLE
+     1. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
+     2. echo 'deb http://download.fpcomplete.com/ubuntu trusty main'|sudo tee /etc/apt/sources.list.d/fpco.list
+     3. Add the output repository to /etc/apt/sources.list
+     4. sudo apt-get update && sudo apt-get install stack -y
+     #+END_EXAMPLE
+
+     - I got an error for the step 1 saying keyserver is not reachable.  So, I
+       followed the [[http://askubuntu.com/questions/308760/w-gpg-error-http-ppa-launchpad-net-precise-release-the-following-signatures][blog post]] to add the key. 
+
+       The steps are:
+       + Open the [[http://keyserver.ubuntu.com/][OpenPGP Public Key Server]] and enter the key =0x575159689BEFB442=
+
+       + click the link on pub, which displays the key.
+
+       + Copy the key statrting from =----BEGIN PGP PUBLIC KEY BLOCK----= till
+         the end to a file key1.
+
+         #+BEGIN_EXAMPLE
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: SKS 1.1.5
+Comment: Hostname: keyserver.ubuntu.com
+
+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
+66cONjgXDBwVxd03KA==
+=KQm6
+-----END PGP PUBLIC KEY BLOCK-----
+         #+END_EXAMPLE
+
+       + Run the command =sudo apt-key add <path to keys1>= to add the key, the
+         result of this operation should be =PK=
+
+     - Add the repository to the sources list.
+       The steps are:
+       + Run command 
+         =echo 'deb http://download.fpcomplete.com/ubuntu trusty main'|sudo tee
+         /etc/apt/sources.list.d/fpco.list=
+         to get the repository
+
+       + The output is =deb http://download.fpcomplete.com/ubuntu trusty main=
+       + Copy the output to =/etc/apt/sources.list=
+
