@@ -1,11 +1,5 @@
-#+TITLE: 
-#+AUTHOR:VLEAD
-#+DATE:
-#+SETUPFILE: ./org-templates/level-0.org
-#+TAGS: boilerplate(b)
-#+EXCLUDE_TAGS: boilerplate
-#+OPTIONS: ^:nil
-
+#+TITLE: Installation of Haskell Compiler and other Tools
+#+DATE: [2016-08-31 Wed]
 
 * Installation
   Refer to the [[https://www.haskell.org/downloads/][blog]] for installation.  I picked 'Minimal Installers'
@@ -88,7 +82,7 @@ KSzm0QLF8kW9CWSkgsFsa8d+6WMox5qP6I35uweZXh6b8QsHWS4305uz9sUMEyZCSUh0s/t0
 -----END PGP PUBLIC KEY BLOCK-----
          #+END_EXAMPLE
 
-       + Run the command =sudo apt-key add <path to keys1>= to add the key, the
+       + Run the command =sudo apt-key add <path to key1>= to add the key, the
          result of this operation should be =PK=
 
      - Add the repository to the sources list.

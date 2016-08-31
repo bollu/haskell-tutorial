@@ -1,0 +1,8 @@
+#+TITLE: Learning Haskell
+#+DATE: [2016-08-31 Wed]
+
+
+* Get started by installing [[./installation.org][Haskell Compiler]]
+
+  
+
